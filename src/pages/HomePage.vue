@@ -1,41 +1,13 @@
 <template>
 	<div class="home">
-		<button @click="ok">Click me</button>
-		<ul>
-			<li v-for="(item, index) in genderData" :key="index">
-				{{ item }}
-			</li>
-		</ul>
+		<post-list />
 	</div>
 </template>
 
 <script>
-import axios from 'axios'
-
+import PostList from '@/components/PostList.vue'
 export default {
-	name: 'HomeView',
-	data() {
-		return {
-			genderData: [],
-		}
-	},
-	methods: {
-		ok() {
-			const URL =
-				'https://datausa.io/api/data?drilldowns=Nation&measures=Population'
-
-			axios
-				.get(URL)
-				.then(response => {
-					this.genderData = [response.data.data]
-					console.log(response.data.data)
-				})
-				.catch(error => {
-					console.log(error)
-				})
-				.finally(() => {})
-		},
-	},
+	components: { PostList },
 }
 </script>
 
@@ -43,7 +15,6 @@ export default {
 .home {
 	width: 100vw;
 	height: 100vh;
-	background: rgba(40, 40, 40, 1);
 }
 ul {
 	width: 800px;

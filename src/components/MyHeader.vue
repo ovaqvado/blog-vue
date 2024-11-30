@@ -16,6 +16,7 @@ export default {}
 .header {
 	background: #0a0819;
 	border-bottom: 1px solid white;
+	height: 80px;
 	width: 100vw;
 }
 

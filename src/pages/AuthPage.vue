@@ -127,5 +127,11 @@ export default {}
 	cursor: pointer;
 	background: darkblue;
 	color: #ffffff;
+	transition: 0.3s;
+}
+
+.btn_login:hover {
+	background: rgb(32, 32, 169);
+	opacity: 0.7;
 }
 </style>
